@@ -1,0 +1,9 @@
+@import url("../../generalStyling.css");
+
+.total-users {
+    background-color: rgba(26, 188, 156, 1.0);
+}
+
+.sortUl{
+    padding: 0px;
+}

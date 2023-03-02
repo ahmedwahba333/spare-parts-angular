@@ -1,0 +1,240 @@
+<!-- <app-nav></app-nav> -->
+<div class="container home-total mb-4">
+
+    <h1 class="text-center m-5">Dashboard Vendor Orders</h1>
+    <div class="container mb-4 d-flex justify-content-center">
+        <div class="text-center d-flex align-items-center justify-content-center total total-orders">
+            <p class="m-3">Total Orders</p>
+            <span class="m-3"><i class="fa fa-users m-3"></i>45</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+
+            <!-- search -->
+            <div class="d-flex justify-content-center mb-4">
+                <input type="text" class="w-75 form-control rounded-end-0" placeholder="Search" id="search">
+                <div ngbDropdown>
+                    <button class="btn rounded-start-0 btn-info text-white" type="button" id="dropdownBasic1"
+                        ngbDropdownToggle>
+                        Search
+                    </button>
+                    <ul ngbDropdownMenu aria-labelledby="dropdownBasic1" style="width: 200px;"
+                        aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem
+                                (click)="search.searchmood('Customer Name')" #merchNameBTn type="button">
+                                <i class="fa fa-search me-2"></i>Customer Name
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem
+                                (click)="search.searchmood('Phone Number')" #merchPhoneBTn type="button">
+                                <i class="fa fa-search me-2"></i>Phone Number
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem
+                                (click)="search.searchmood('Email')" #merchEmailBTn type="button">
+                                <i class="fa fa-search me-2"></i>Email
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem
+                                (click)="search.searchmood('Address')" #merchAddressBTn type="button">
+                                <i class="fa fa-search me-2"></i>Address
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem
+                                (click)="search.searchmood('City')" #merchCityBTn type="button">
+                                <i class="fa fa-search me-2"></i>City
+                            </button>
+                        </li>
+                        <li>
+
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Order Name')"
+                                ngbDropdownItem id="merchOrderNameBTn" type="button">
+                                <i class="fa fa-search me-2"></i>Order Name
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Order Type')"
+                                ngbDropdownItem id="merchOrderTypeBTn" type="button">
+                                <i class="fa fa-search me-2"></i>Order Type
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Order Price')"
+                                ngbDropdownItem id="merchOrderPriceBTn" type="button">
+                                <i class="fa fa-search me-2"></i>Order Price
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Status')" #merchStatusBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Status
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- filter -->
+            <div class="btn-group col-12">
+                <button type="button" class="btn btn-info dropdown-toggle text-white fw-bold "
+                    data-bs-auto-close="outside" id="sortBtnToggle">
+                    Sort By
+                </button>
+                <ul class="dropdown-menu dropdown-menu-list w-100 text-center itemNodeClassParent"
+                    id="sortBtnToggleChild">
+                    <li id="priceBtnLabelId" class="dropdown-item dropdown-item-list">Price
+                        <i class="fa fa-money-bill-wheat"></i>
+                    </li>
+                    <li id="priceBtnLabelIdToggle" class="hideClass itemNodeClassParent">
+                        <ul>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idLowerToUpper">
+                                Price: lower to heighr
+                                <i class="fa fa-arrow-up-wide-short"></i>
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idUpperToLower">
+                                Price: heighr to lower
+                                <i class="fa fa-arrow-down-short-wide"></i>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="AtoZBtnId" class="dropdown-item dropdown-item-list">A To Z
+                        <i class="fa fa-arrow-down-a-z"></i>
+                    </li>
+                    <li id="AtoZBtnIdToggle" class="hideClass itemNodeClassParent">
+                        <ul>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZItemName">Customer Address
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZ">Customer Name
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZCatMod">Customer Email</li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZCountry">Customer City
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZCatMod">Order
+                                Name
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZItemName">Order
+                                Type
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li id="ZtoABtnId" class="dropdown-item dropdown-item-list">Z To A
+                        <i class="fa fa-arrow-up-a-z"></i>
+                    </li>
+                    <li id="ZtoABtnIdToggle" class="hideClass itemNodeClassParent">
+                        <ul>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtOAItemName">Customer Address
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtoA">Customer Name
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtoACatMod">Customer Email</li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtOAICountry">Customer City
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtoACatMod">Order
+                                Name
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtoAItemName">Order
+                                Type</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- End primary tree -->
+
+
+<!-- start total users tree -->
+
+<div class="container-fluid-md container-xxl latest total-Merchant-users-details table-responsive">
+    <table class="table table-striped table-hover text-center" id="mainTable">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" id="merchantName">customer Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col" id="orderName">Order Name</th>
+                <th scope="col" id="orderType">Order Type</th>
+                <th scope="col" id="orderPrice">Order Price</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Order Pricture</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+
+            <tr class="userOne order-details">
+                <th scope="row">1</th>
+                <td class="merchantName">Mark</td>
+                <td class="customerPhone">01110002222</td>
+                <td class="customerEmail">ahmed@yahoo.com</td>
+                <td class="customerAddress">12st shoubra</td>
+                <td class="customerCity">Cairo</td>
+                <th scope="row" class="orderName">1</th>
+                <td class="orderType">Ali</td>
+                <td class="orderPrice">100</td>
+                <td>26/02/2023</td>
+                <td><img src="./assets/imgs/car spare (1).jpg" alt="" width="100px" height="100px"></td>
+                <td class="customerStatus">Completed</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-success">Submit <i class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+
+            <tr class="userTwo order-details">
+                <th scope="row">2</th>
+                <td class="merchantName">Ali</td>
+                <td class="customerPhone">01001112222</td>
+                <td class="customerEmail">Mona@yahoo.com</td>
+                <td class="customerAddress">52st elsail</td>
+                <td class="customerCity">Aswan</td>
+                <th scope="row" class="orderName">1</th>
+                <td class="orderType">Ali</td>
+                <td class="orderPrice">200</td>
+                <td>02/12/2022</td>
+                <td><img src="./assets/imgs/car spare (2).jpg" alt="" width="100px" height="100px"></td>
+                <td class="customerStatus">Rejected</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-success">Submit <i class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+            <tr class="userThree order-details">
+                <th scope="row">3</th>
+                <td class="merchantName">Marwa</td>
+                <td class="customerPhone">01110002222</td>
+                <td class="customerEmail">Ali@yahoo.com</td>
+                <td class="customerAddress">1st agamy</td>
+                <td class="customerCity">Alexandria</td>
+                <th scope="row" class="orderName">1</th>
+                <td class="orderType">Ali</td>
+                <td class="orderPrice">150</td>
+                <td>15/01/2023</td>
+                <td><img src="./assets/imgs/car spare (3).jpg" alt="" width="100px" height="100px"></td>
+                <td class="customerStatus">Pending</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-success">Submit <i class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- End total users tree -->

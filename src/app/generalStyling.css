@@ -1,0 +1,95 @@
+/* .input-group-append .btn i{
+    margin-right: 5px;
+} */
+.hideClass {
+    display: none;
+}
+
+#sortBtnToggleChild {
+    margin: auto;
+}
+
+.dropdown-menu-list {
+    transform: translate3d(-12px, 40px, 0px) !important;
+}
+
+td,
+th {
+    vertical-align: middle;
+}
+
+/* table {
+    width: fit-content;
+} */
+
+/*  */
+
+.total {
+    padding: 10px 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.total span {
+    display: block;
+}
+
+.total-orders {
+    background-color: rgba(41, 128, 185, 1.0);
+}
+
+
+.dispNone {
+    display: none;
+}
+
+.dispBlock {
+    display: block;
+}
+
+.dropdown-item-list {
+    font-size: 17px;
+}
+
+.dropdown-item-list:hover {
+    color: #30a4bc;
+    cursor: pointer;
+}
+
+
+/* font for search & Sort */
+
+.fontSortStyling {
+    color: #30a4bc;
+    font-weight: bold;
+}
+
+.btn-search {
+    font-size: 17px;
+}
+
+.btn-search:hover {
+    color: #30a4bc;
+}
+
+
+
+
+
+.actionBtns button {
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    align-items: center;
+    
+}
+.actionBtns{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

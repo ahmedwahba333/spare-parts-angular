@@ -1,0 +1,221 @@
+
+<!-- start primary tree -->
+
+<div class="container home-total mb-4">
+
+    <h1 class="text-center m-5">Dashboard Admin Maintenance Center Users</h1>
+    <div class="container mb-4 d-flex justify-content-center">
+        <div
+            class="text-center d-flex flex-column align-items-center justify-content-center total total-users flex-wrap">
+            <div>
+                <p class="m-3">Total Maintenance Center Users</p>
+                <span class="m-3"><i class="fa fa-users m-3"></i>90</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="m-3">Accepted</p>
+                    <span class="m-3"><i class="fa fa-check m-3"></i>45</span>
+                </div>
+                <div>
+                    <p class="m-3">Pending</p>
+                    <span class="m-3"><i class="fa fa-spinner m-3"></i>45</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+
+
+            <!-- search -->
+            <div class="d-flex justify-content-center mb-4">
+                <input type="text" class="w-75 form-control rounded-end-0" placeholder="Search" id="search">
+                <div ngbDropdown>
+                    <button class="btn rounded-start-0 btn-info text-white" type="button" id="dropdownBasic1"
+                        ngbDropdownToggle>
+                        Search
+                    </button>
+                    <ul ngbDropdownMenu aria-labelledby="dropdownBasic1" style="width: 200px;"
+                        aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Name')" id="merchNameBTn"
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Name
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('National Id')" id="merchNIDBTn"
+                                type="button">
+                                <i class="fa fa-search me-2"></i>National Id
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Phone Number')" id="merchPhoneBTn"
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Phone Number
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Email')" id="merchEmailBTn"
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Email
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Address')" id="merchAddressBTn"
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Address
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('City')" id="merchCityBTn"
+                                type="button">
+                                <i class="fa fa-search me-2"></i>City
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Status')" id="merchStatusBTn"
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Status
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- filter -->
+            <div class="btn-group col-12">
+                <button type="button" class="btn btn-info dropdown-toggle text-white fw-bold" id="sortBtnToggle"
+                    data-bs-auto-close="outside">
+                    <!-- data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"> -->
+                    Sort By
+                </button>
+                <ul class="dropdown-menu dropdown-menu-list w-100 text-center itemNodeClassParent"
+                    id="sortBtnToggleChild">
+                    <li id="AtoZBtnId" class="dropdown-item dropdown-item-list">A To Z
+                        <i class="fa fa-arrow-down-a-z"></i>
+                    </li>
+                    <li id="AtoZBtnIdToggle" class="hideClass itemNodeClassParent">
+                        <ul class="sortUl">
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZ">Name
+                            </li>
+
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZCatMod">Email</li>
+
+
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZItemName">Address
+                            </li>
+
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZCountry">City
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li id="ZtoABtnId" class="dropdown-item dropdown-item-list">Z To A
+                        <i class="fa fa-arrow-up-a-z"></i>
+                    </li>
+                    <li id="ZtoABtnIdToggle" class="hideClass itemNodeClassParent">
+                        <ul class="sortUl">
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtoA">Name
+                            </li>
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtoACatMod">Email</li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtOAItemName">Address
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtOAICountry">City
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a class="btn btn-info text-white w-auto mt-4 fw-bold">Add Maintenance Center User<span><i class="fa fa-user m-3"></i></span></a>
+        </div>
+    </div>
+</div>
+<!-- End primary tree -->
+
+
+
+<!-- start total users tree -->
+
+<div class="container-fluid-md container-xxl latest total-Merchant-users-details table-responsive">
+    <table class="table table-striped table-hover text-center" id="mainTable">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" id="merchantName">Name</th>
+                <th scope="col" id="merchantNID">National Id</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">Commercial Register</th>
+                <th scope="col">Status</th>
+
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+
+            <tr class="userOne order-details">
+                <th scope="row">1</th>
+                <td class="maintenanceName">oil</td>
+                <td class="maintenanceNID">291023002259</td>
+                <td class="maintenancePhone">01110002222</td>
+                <td class="maintenanceEmail">oil@yahoo.com</td>
+                <td class="maintenanceAddress">12st shoubra</td>
+                <td class="maintenanceCity">Cairo</td>
+                <td><img src="./assets/imgs/document0.jpg" alt="" width="100px" height="100px"></td>
+                <td class="maintenanceStatus">Accepted</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-warning text-white">Edit <i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+
+            <tr class="userTwo order-details">
+                <th scope="row">2</th>
+                <td class="maintenanceName">motor</td>
+                <td class="maintenanceNID">298123002259</td>
+                <td class="maintenancePhone">01001112222</td>
+                <td class="maintenanceEmail">motor@yahoo.com</td>
+                <td class="maintenanceAddress">52st elsail</td>
+                <td class="maintenanceCity">Aswan</td>
+                <td><img src="./assets/imgs/document0.jpg" alt="" width="100px" height="100px"></td>
+                <td class="maintenanceStatus">Rejected</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-warning text-white">Edit <i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+            <tr class="userThree order-details">
+                <th scope="row">3</th>
+                <td class="maintenanceName">jukom</td>
+                <td class="maintenanceNID">294043002259</td>
+                <td class="maintenancePhone">01110002222</td>
+                <td class="maintenanceEmail">jukom@yahoo.com</td>
+                <td class="maintenanceAddress">1st agamy</td>
+                <td class="maintenanceCity">Alexandria</td>
+                <td><img src="./assets/imgs/document0.jpg" alt="" width="100px" height="100px"></td>
+                <td class="maintenanceStatus">Pending</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-warning text-white">Edit <i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- End total users tree -->

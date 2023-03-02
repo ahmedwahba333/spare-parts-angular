@@ -1,0 +1,298 @@
+
+<div class="container home-total mb-4">
+
+    <h1 class="text-center m-5">Dashboard Admin customers</h1>
+    <div class="container mb-4 d-flex justify-content-center">
+        <div
+            class="text-center d-flex flex-column align-items-center justify-content-center total total-users flex-wrap">
+            <div>
+                <p class="m-3">Total customers</p>
+                <span class="m-3"><i class="fa fa-users m-3"></i>90</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="m-3">Accepted</p>
+                    <span class="m-3"><i class="fa fa-check m-3"></i>45</span>
+                </div>
+                <div>
+                    <p class="m-3">Pending</p>
+                    <span class="m-3"><i class="fa fa-spinner m-3"></i>45</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+
+
+            <!-- search -->
+            <div class="d-flex justify-content-center mb-4">
+                <input type="text" class="w-75 form-control rounded-end-0" placeholder="Search" id="search" #searchInput>
+                <div ngbDropdown>
+                    <button class="btn rounded-start-0 btn-info text-white" type="button" id="dropdownBasic1"
+                        ngbDropdownToggle>
+                        Search
+                    </button>
+                    <ul ngbDropdownMenu aria-labelledby="dropdownBasic1" style="width: 200px;"
+                        aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Name')" #merchNameBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Name
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('National Id')" #merchNIDBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>National Id
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Phone Number')" #merchPhoneBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Phone Number
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Email')" #merchEmailBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Email
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Address')" #merchAddressBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Address
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('City')" #merchCityBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>City
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Car Brand')" #carBrandBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Car Brand
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Car Model')" #carModelBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Car Model
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Year')" #yearBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Year
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Gender')" #genderBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Gender
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem (click)="search.searchmood('Status')" #merchStatusBTn
+                                type="button">
+                                <i class="fa fa-search me-2"></i>Status
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- filter -->
+            <div class="btn-group col-12">
+                <button type="button" class="btn btn-info dropdown-toggle text-white fw-bold" id="sortBtnToggle"
+                    data-bs-auto-close="outside">
+                    <!-- data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"> -->
+                    Sort By
+                </button>
+                <ul class="dropdown-menu dropdown-menu-list w-100 text-center itemNodeClassParent"
+                    id="sortBtnToggleChild">
+
+                    <li id="priceBtnLabelId" class="dropdown-item dropdown-item-list">Year
+                        <i class="fa fa-calendar"></i>
+                    </li>
+                    <li id="priceBtnLabelIdToggle" class="hideClass itemNodeClassParent">
+                        <ul>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idLowerToUpper">
+                                Year: lower to heighr
+                                <i class="fa fa-arrow-up-wide-short"></i>
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idUpperToLower">
+                                Year: heighr to lower
+                                <i class="fa fa-arrow-down-short-wide"></i>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+
+
+                    <li id="AtoZBtnId" class="dropdown-item dropdown-item-list">A To Z
+                        <i class="fa fa-arrow-down-a-z"></i>
+                    </li>
+                    <li id="AtoZBtnIdToggle" class="hideClass itemNodeClassParent">
+                        <ul class="sortUl">
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZ">Name
+                            </li>
+
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZCatMod">Email</li>
+
+
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZItemName">Address
+                            </li>
+
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZCountry">City
+                            </li>
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZYear">Year
+                            </li>
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZBrand">Car Brand
+                            </li>
+
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZModel">Car Model
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li id="ZtoABtnId" class="dropdown-item dropdown-item-list">Z To A
+                        <i class="fa fa-arrow-up-a-z"></i>
+                    </li>
+                    <li id="ZtoABtnIdToggle" class="hideClass itemNodeClassParent">
+                        <ul class="sortUl">
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtoA">Name
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtoACatMod">Email</li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtOAItemName">Address
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtOAICountry">City
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtOAYear">Year
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtOABrand">Car Brand
+                            </li>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtOAModel">Car Model
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a class="btn btn-info text-white w-auto mt-4 fw-bold">Add customers <span><i class="fa fa-user m-3"></i></span></a>
+        </div>
+    </div>
+</div>
+
+<!-- End primary tree -->
+
+
+
+<!-- start total users tree -->
+
+<div class="container-fluid-md container-xxl latest total-Merchant-users-details table-responsive">
+    <table class="table table-striped table-hover text-center" id="mainTable">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" id="merchantName">Name</th>
+                <th scope="col" id="merchantNID">National Id</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">Car Brand</th>
+                <th scope="col">Car Model</th>
+                <th scope="col">Year</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Customer Picture</th>
+                <th scope="col">Car Picture</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+
+            <tr class="userOne order-details">
+                <th scope="row">1</th>
+                <td class="customerName">Ahmed</td>
+                <td class="customerNID">291023002259</td>
+                <td class="customerPhone">01110002222</td>
+                <td class="customerEmail">ahmed@yahoo.com</td>
+                <td class="customerAddress">12st shoubra</td>
+                <td class="customerCity">Cairo</td>
+                <td class="carBrand">mercedes</td>
+                <td class="carModel">Benz</td>
+                <td class="carYear">2018</td>
+                <td class="customerGender">male</td>
+                <td><img src="./assets/imgs/user (2).jpg" alt="" width="75px" height="75px"></td>
+                <td><img src="./assets/imgs/car (3).jpg" alt="" width="75px" height="75px"></td>
+                <td class="customerStatus">Accepted</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-warning text-white">Edit <i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+
+            <tr class="userTwo order-details">
+                <th scope="row">2</th>
+                <td class="customerName">Mona</td>
+                <td class="customerNID">298123002259</td>
+                <td class="customerPhone">01001112222</td>
+                <td class="customerEmail">Mona@yahoo.com</td>
+                <td class="customerAddress">52st elsail</td>
+                <td class="customerCity">Aswan</td>
+                <td class="carBrand">mitsubishi</td>
+                <td class="carModel">Lancer</td>
+                <td class="carYear">2015</td>
+                <td class="customerGender">Female</td>
+                <td><img src="./assets/imgs/user (1).jpg" alt="" width="75px" height="75px"></td>
+                <td><img src="./assets/imgs/car (2).jpg" alt="" width="75px" height="75px"></td>
+                <td class="customerStatus">Rejected</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-warning text-white">Edit <i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+            <tr class="userThree order-details">
+                <th scope="row">3</th>
+                <td class="customerName">Ali</td>
+                <td class="customerNID">294043002259</td>
+                <td class="customerPhone">01110002222</td>
+                <td class="customerEmail">Ali@yahoo.com</td>
+                <td class="customerAddress">1st agamy</td>
+                <td class="customerCity">Alexandria</td>
+                <td class="carBrand">chevrolet</td>
+                <td class="carModel">Aveo</td>
+                <td class="carYear">2020</td>
+                <td class="customerGender">Male</td>
+                <td><img src="./assets/imgs/user (3).jpg" alt="" width="75px" height="75px"></td>
+                <td><img src="./assets/imgs/car (1).jpg" alt="" width="75px" height="75px"></td>
+                <td class="customerStatus">Pending</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-warning text-white">Edit <i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- End total users tree -->

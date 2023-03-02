@@ -1,0 +1,132 @@
+<div class="container home-total mb-4">
+
+    <h1 class="text-center m-5">Dashboard Admin Categories</h1>
+    <div class="container mb-4 d-flex justify-content-center">
+        <div class="text-center d-flex align-items-center justify-content-center total total-orders">
+            <div>
+                <p class="m-3">Total Categories</p>
+                <span class="m-3"><i class="fa fa-tags m-3"></i>4</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+
+
+            <!-- search -->
+            <div class="d-flex justify-content-center mb-4">
+                <input type="text" class="w-75 form-control rounded-end-0" placeholder="Search" id="search">
+                <div ngbDropdown>
+                    <button class="btn rounded-start-0 btn-info text-white" type="button" id="dropdownBasic1"
+                        ngbDropdownToggle>
+                        Search
+                    </button>
+                    <ul ngbDropdownMenu aria-labelledby="dropdownBasic1" style="width: 200px;"
+                        aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Category Name')"
+                                ngbDropdownItem id="catBrandNameIDSrch" type="button">
+                                <i class="fa fa-search me-2"></i>Category Name
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="input-group-append col-12 row justify-content-center mb-4 flex-wrap"> -->
+            <!-- <div class="col-12 row justify-content-center"> -->
+
+
+
+            <!-- </div> -->
+
+            <!-- <div class="col-12 row justify-content-center"> -->
+
+
+
+            <!-- </div> -->
+            <!-- </div> -->
+
+            <!-- filter -->
+            <div class="btn-group col-12">
+                <button type="button" class="btn btn-info dropdown-toggle text-white fw-bold" id="sortBtnToggle"
+                    data-bs-auto-close="outside">
+                    Sort By
+                </button>
+                <ul class="dropdown-menu dropdown-menu-list w-100 text-center itemNodeClassParent"
+                    id="sortBtnToggleChild">
+                    <li id="AtoZBtnId" class="dropdown-item dropdown-item-list">A To Z
+                        <i class="fa-solid fa-arrow-down-a-z"></i>
+                    </li>
+                    <li id="AtoZBtnIdToggle" class="hideClass itemNodeClassParent">
+                        <ul>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idAtOZ">Category Brand
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li id="ZtoABtnId" class="dropdown-item dropdown-item-list">Z To A
+                        <i class="fa-solid fa-arrow-up-a-z"></i>
+                    </li>
+                    <li id="ZtoABtnIdToggle" class="hideClass itemNodeClassParent">
+                        <ul>
+                            <li class="dropdown-item dropdown-item-list itemNodeClass" id="idZtoA">Category Brand
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a class="btn btn-info text-white w-auto mt-4 fw-bold">Add Category<span><i class="fa fa-tag m-3"></i></span></a>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- End primary tree -->
+
+
+<!-- start total users tree -->
+
+<div class="container-fluid-md container-xxl latest total-Merchant-users-details table-responsive">
+    <table class="table table-striped table-hover text-center" id="mainTable">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" id="catBrandNameID">Category Name</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr class="userOne order-details">
+                <th scope="row">1</th>
+                <td class="catBrandName">Tires</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-warning text-white">Edit <i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+            <tr class="userTwo order-details">
+                <th scope="row">2</th>
+                <td class="catBrandName">Oil</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-warning text-white">Edit <i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+            <tr class="userThree order-details">
+                <th scope="row">3</th>
+                <td class="catBrandName">motor</td>
+                <td class="actionBtns">
+                    <button type="button" class="btn btn-warning text-white">Edit <i
+                            class="fa fa-exclamation-triangle"></i></button>
+                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- End total users tree -->
