@@ -1,0 +1,136 @@
+<div class="my-5 container">
+    <div>
+        <h3>Add Product</h3>
+        <form [formGroup]="addCat" (ngSubmit)="submitAddCat()" class="mt-4">
+            <div>
+                <label for="catBrand" class="me-4 form-label">Category Brand</label>
+                <input type="text" id="catBrand" placeholder="Brand Name"
+                    [ngClass]="addCat.controls['catBrand'].invalid && addCat.controls['catBrand'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catBrand">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addCat.controls['catBrand'].touched && addCat.controls['catBrand'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catBrand'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catBrand'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="catModel" class="me-4 form-label">Category Model</label>
+                <input type="text" id="catModel" placeholder="Model Name"
+                    [ngClass]="addCat.controls['catModel'].invalid && addCat.controls['catModel'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catModel">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addCat.controls['catModel'].touched && addCat.controls['catModel'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catModel'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catModel'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="catYear" class="me-4 form-label">Category Year</label>
+                <input type="number" min="1990" max="2023" id="catYear" placeholder="1900 - 2023"
+                    [ngClass]="addCat.controls['catYear'].invalid && addCat.controls['catYear'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catYear">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addCat.controls['catYear'].touched && addCat.controls['catYear'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catYear'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text"
+                            *ngIf="addCat.controls['catYear'].errors?.['min'] || addCat.controls['catYear'].errors?.['max']">
+                            Enter Correct Year
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="catItem" class="me-4 form-label">Product Item</label>
+                <input type="text" id="catItem" placeholder="Item Name"
+                    [ngClass]="addCat.controls['catItem'].invalid && addCat.controls['catItem'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catItem">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addCat.controls['catItem'].touched && addCat.controls['catItem'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catItem'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catItem'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="catItemDesc" class="me-4 form-label">Product Item description</label>
+                <textarea type="text" id="catItemDesc" placeholder="Item description"
+                    [ngClass]="addCat.controls['catItemDesc'].invalid && addCat.controls['catItemDesc'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" rows="5" formControlName="catItemDesc"></textarea>
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addCat.controls['catItemDesc'].touched && addCat.controls['catItemDesc'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catItemDesc'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catItemDesc'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="catPrice" class="me-4 form-label">Product Price</label>
+                <input type="number" min="1" id="catPrice" placeholder="EGP"
+                    [ngClass]="addCat.controls['catPrice'].invalid && addCat.controls['catPrice'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catPrice">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addCat.controls['catPrice'].touched && addCat.controls['catPrice'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catPrice'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text"
+                            *ngIf="addCat.controls['catPrice'].errors?.['min'] || addCat.controls['catPrice'].errors?.['max']">
+                            Enter Real Price
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="catCountry" class="me-4 form-label">Product Country</label>
+                <input type="text" id="catCountry" placeholder="Country Name"
+                    [ngClass]="addCat.controls['catCountry'].invalid && addCat.controls['catCountry'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catCountry">
+                <div style="height: 30px;" class="d-flex align-Countrys-start">
+                    <div *ngIf="addCat.controls['catCountry'].touched && addCat.controls['catCountry'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catCountry'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catCountry'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="catPic" class="me-4 form-label">Product Picture</label>
+                <input type="file" accept="image/*" id="catPic" multiple
+                    [ngClass]="addCat.controls['catPic'].invalid && addCat.controls['catPic'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catPic">
+                <div style="height: 30px;" class="d-flex align-Pics-start">
+                    <div *ngIf="addCat.controls['catPic'].touched && addCat.controls['catPic'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catPic'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" [disabled]="addCat.invalid">Submit</button>
+        </form>
+    </div>
+    <button (click)="goBAck()" class="btn btn-primary mt-3"><i class="fa fa-backward"></i> Back To Products</button>
+</div>

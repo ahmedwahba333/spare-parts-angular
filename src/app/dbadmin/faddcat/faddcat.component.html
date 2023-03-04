@@ -1,0 +1,26 @@
+<div class="my-5 container">
+    <div>
+        <h3>Add Category</h3>
+        <form [formGroup]="addCat" (ngSubmit)="submitAddCat()" class="mt-4">
+            <div>
+                <label for="catName" class="me-4 form-label">Category Name</label>
+                <input type="text" id="catName"
+                    [ngClass]="addCat.invalid && addCat.touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catName">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addCat.controls['catName'].touched && addCat.controls['catName'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catName'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addCat.controls['catName'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" [disabled]="addCat.invalid">Submit</button>
+        </form>
+    </div>
+    <button (click)="goBAck()" class="btn btn-primary mt-3"><i class="fa fa-backward"></i> Back To Categories</button>
+</div>

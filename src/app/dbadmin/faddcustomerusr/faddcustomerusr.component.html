@@ -1,0 +1,171 @@
+<div class="my-5 container">
+    <div>
+        <h3>Add Customer User</h3>
+        <form [formGroup]="addusr" (ngSubmit)="submitaddusr()" class="mt-4">
+            <div>
+                <label for="maincenusr" class="me-4 form-label">User Name</label>
+                <input type="text" id="maincenusr" placeholder="User Name"
+                    [ngClass]="addusr.controls['maincenusr'].invalid && addusr.controls['maincenusr'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="maincenusr">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addusr.controls['maincenusr'].touched && addusr.controls['maincenusr'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['maincenusr'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addusr.controls['maincenusr'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="maincenNID" class="me-4 form-label">National Id</label>
+                <input type="text" id="maincenNID" placeholder="National Id"
+                    [ngClass]="addusr.controls['maincenNID'].invalid && addusr.controls['maincenNID'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="maincenNID">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div class="d-flex"
+                        *ngIf="addusr.controls['maincenNID'].touched && addusr.controls['maincenNID'].invalid">
+                        <div class="text-danger form-text me-3"
+                            *ngIf="addusr.controls['maincenNID'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addusr.controls['maincenNID'].errors?.['minlength'] || 
+                            addusr.controls['maincenNID'].errors?.['maxlength'] || 
+                            addusr.controls['maincenNID'].errors?.['pattern']">
+                            Enter The Right Number
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="maincenPhNum" class="me-4 form-label">Phone Number</label>
+                <input type="text" id="maincenPhNum" placeholder="Phone Number"
+                    [ngClass]="addusr.controls['maincenPhNum'].invalid && addusr.controls['maincenPhNum'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="maincenPhNum">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div class="d-flex"
+                        *ngIf="addusr.controls['maincenPhNum'].touched && addusr.controls['maincenPhNum'].invalid">
+                        <div class="text-danger form-text me-3"
+                            *ngIf="addusr.controls['maincenPhNum'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="
+                            addusr.controls['maincenPhNum'].errors?.['pattern']">
+                            Enter The Right Phone Number
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="maincenEmail" class="me-4 form-label">Email</label>
+                <input type="text" id="maincenEmail" placeholder="Email"
+                    [ngClass]="addusr.controls['maincenEmail'].invalid && addusr.controls['maincenEmail'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="maincenEmail">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addusr.controls['maincenEmail'].touched && addusr.controls['maincenEmail'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['maincenEmail'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addusr.controls['maincenEmail'].errors?.['pattern']">
+                            Enter The Correct Email
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="maincenAddr" class="me-4 form-label">Address</label>
+                <input type="text" id="maincenAddr" placeholder="Address"
+                    [ngClass]="addusr.controls['maincenAddr'].invalid && addusr.controls['maincenAddr'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="maincenAddr">
+                <div style="height: 30px;" class="d-flex align-Countrys-start">
+                    <div *ngIf="addusr.controls['maincenAddr'].touched && addusr.controls['maincenAddr'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['maincenAddr'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addusr.controls['maincenAddr'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="maincenCity" class="me-4 form-label">City</label>
+                <input type="text" id="maincenCity" placeholder="Country Name"
+                    [ngClass]="addusr.controls['maincenCity'].invalid && addusr.controls['maincenCity'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="maincenCity">
+                <div style="height: 30px;" class="d-flex align-Countrys-start">
+                    <div *ngIf="addusr.controls['maincenCity'].touched && addusr.controls['maincenCity'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['maincenCity'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addusr.controls['maincenCity'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="catBrand" class="me-4 form-label">Car Brand</label>
+                <input type="text" id="catBrand" placeholder="Car Brand"
+                    [ngClass]="addusr.invalid && addusr.touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catBrand">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addusr.controls['catBrand'].touched && addusr.controls['catBrand'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['catBrand'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addusr.controls['catBrand'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="catItem" class="me-4 form-label">Car Model</label>
+                <input type="text" id="catItem" placeholder="Car Model"
+                    [ngClass]="addusr.controls['catItem'].invalid && addusr.controls['catItem'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="catItem">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addusr.controls['catItem'].touched && addusr.controls['catItem'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['catItem'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addusr.controls['catItem'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="custPic" class="me-4 form-label">Customer Picture</label>
+                <input type="file" accept="image/*" id="custPic"
+                    [ngClass]="addusr.controls['custPic'].invalid && addusr.controls['custPic'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="custPic">
+                <div style="height: 30px;" class="d-flex align-Pics-start">
+                    <div *ngIf="addusr.controls['custPic'].touched && addusr.controls['custPic'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['custPic'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="carPic" class="me-4 form-label">Car Picture</label>
+                <input type="file" accept="image/*" id="carPic"
+                    [ngClass]="addusr.controls['carPic'].invalid && addusr.controls['carPic'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="carPic">
+                <div style="height: 30px;" class="d-flex align-Pics-start">
+                    <div *ngIf="addusr.controls['carPic'].touched && addusr.controls['carPic'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['carPic'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" [disabled]="addusr.invalid">Submit</button>
+        </form>
+    </div>
+    <button (click)="goBAck()" class="btn btn-primary mt-3"><i class="fa fa-backward"></i> Back To Customer
+        Users</button>
+</div>

@@ -1,0 +1,56 @@
+<div class="my-5 container">
+    <div>
+        <h3>Add Merchant User</h3>
+        <form [formGroup]="addusr" (ngSubmit)="submitaddusr()" class="mt-4">
+            <div>
+                <label for="merusr" class="me-4 form-label">User Name</label>
+                <input type="text" id="merusr"
+                    [ngClass]="addusr.controls['merusr'].invalid && addusr.controls['merusr'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="merusr">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div *ngIf="addusr.controls['merusr'].touched && addusr.controls['merusr'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['merusr'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addusr.controls['merusr'].errors?.['minlength']">
+                            Minimum 3 Characters
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="merNID" class="me-4 form-label">National Id</label>
+                <input type="text" id="merNID"
+                    [ngClass]="addusr.controls['merNID'].invalid && addusr.controls['merNID'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="merNID">
+                <div style="height: 30px;" class="d-flex align-items-start">
+                    <div class="d-flex" *ngIf="addusr.controls['merNID'].touched && addusr.controls['merNID'].invalid">
+                        <div class="text-danger form-text me-3" *ngIf="addusr.controls['merNID'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                        <div class="text-danger form-text" *ngIf="addusr.controls['merNID'].errors?.['minlength'] || 
+                            addusr.controls['merNID'].errors?.['maxlength'] || 
+                            addusr.controls['merNID'].errors?.['pattern']">
+                            Enter The Right Number
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="comReg" class="me-4 form-label">Commercial Register Picture</label>
+                <input type="file" accept="image/*" id="comReg"
+                    [ngClass]="addusr.controls['comReg'].invalid && addusr.controls['comReg'].touched?'border-danger':'border-success'"
+                    class="form-control w-100" formControlName="comReg">
+                <div style="height: 30px;" class="d-flex align-Pics-start">
+                    <div *ngIf="addusr.controls['comReg'].touched && addusr.controls['comReg'].invalid">
+                        <div class="text-danger form-text" *ngIf="addusr.controls['comReg'].errors?.['required']">
+                            This Field Is Required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" [disabled]="addusr.invalid">Submit</button>
+        </form>
+    </div>
+    <button (click)="goBAck()" class="btn btn-primary mt-3"><i class="fa fa-backward"></i> Back To Categories</button>
+</div>

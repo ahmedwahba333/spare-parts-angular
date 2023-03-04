@@ -1,7 +1,6 @@
-
 <div class="container home-total mb-4">
 
-    <h1 class="text-center m-5">Dashboard Admin Categories and items</h1>
+    <h1 class="text-center m-5">Dashboard Admin Products</h1>
     <div class="container mb-4 d-flex justify-content-center">
         <div class="text-center d-flex align-items-center justify-content-center total total-orders">
             <div>
@@ -21,39 +20,60 @@
             <div class="d-flex justify-content-center mb-4">
                 <input type="text" class="w-75 form-control rounded-end-0" placeholder="Search" id="search">
                 <div ngbDropdown>
-                    <button class="btn rounded-start-0 btn-info text-white" type="button" id="dropdownBasic1" ngbDropdownToggle>
+                    <button class="btn rounded-start-0 btn-info text-white" type="button" id="dropdownBasic1"
+                        ngbDropdownToggle>
                         Search
                     </button>
                     <ul ngbDropdownMenu aria-labelledby="dropdownBasic1" style="width: 200px;"
-                    aria-labelledby="dropdownMenuButton1">
-                        <li> <button class="p-0 w-75 btn btn-search m-3"   (click)="search.searchmood('Category Brand')" ngbDropdownItem
-                                id="catBrandNameIDSrch" type="button">
+                        aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Category Brand')"
+                                ngbDropdownItem id="catBrandNameIDSrch" type="button">
                                 <i class="fa fa-search me-2"></i>Category Brand
-                            </button></li>
-                        <li><button class="p-0 w-75 btn btn-search m-3"   (click)="search.searchmood('Category Model')" ngbDropdownItem
-                                id="catModelNameIDSrch" type="button">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Category Model')"
+                                ngbDropdownItem id="catModelNameIDSrch" type="button">
                                 <i class="fa fa-search me-2"></i>Category Model
-                            </button></li>
-                        <li><button class="p-0 w-75 btn btn-search m-3"   (click)="search.searchmood('Category Year')" ngbDropdownItem
-                                id="catYearIDSrch" type="button">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Category Year')"
+                                ngbDropdownItem id="catYearIDSrch" type="button">
                                 <i class="fa fa-search me-2"></i>Category Year
-                            </button></li>
-                        <li> <button class="p-0 w-75 btn btn-search m-3"  (click)="search.searchmood('Item Name')" ngbDropdownItem
-                                id="itemNameIDSrch" type="button">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Item Name')"
+                                ngbDropdownItem id="itemNameIDSrch" type="button">
                                 <i class="fa fa-search me-2"></i>Item Name
-                            </button></li>
-                        <li><button class="p-0 w-75 btn btn-search m-3"   (click)="search.searchmood('Item description')" ngbDropdownItem
-                                id="itemDescIDSrch" type="button">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Item description')"
+                                ngbDropdownItem id="itemDescIDSrch" type="button">
                                 <i class="fa fa-search me-2"></i>Item description
-                            </button></li>
-                        <li><button class="p-0 w-75 btn btn-search m-3"   (click)="search.searchmood('Item Price')" ngbDropdownItem
-                                id="itemPriceIDSrch" type="button">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('Item Price')"
+                                ngbDropdownItem id="itemPriceIDSrch" type="button">
                                 <i class="fa fa-search me-2"></i>Item Price
-                            </button></li>
-                        <li><button class="p-0 w-75 btn btn-search m-3"   (click)="search.searchmood('country')" ngbDropdownItem
-                                id="countryIDSrch" type="button">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" (click)="search.searchmood('country')"
+                                ngbDropdownItem id="countryIDSrch" type="button">
                                 <i class="fa fa-search me-2"></i>country
-                            </button></li>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="p-0 w-75 btn btn-search m-3" ngbDropdownItem
+                                (click)="search.searchmood('Status')" id="itemNameIDSrch" type="button">
+                                <i class="fa fa-search me-2"></i>Status
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -141,7 +161,8 @@
                     </li>
                 </ul>
             </div>
-            <a class="btn btn-info text-white w-auto mt-4 fw-bold text-center">Add<span><i class="fa fa-tag m-3 me-0"></i></span></a>
+            <a class="btn btn-info text-white w-auto mt-4 fw-bold text-center"
+                routerLink="DBAdm-Add-Products">Add<span><i class="fa fa-tag m-3 me-0"></i></span></a>
         </div>
 
 
@@ -166,6 +187,7 @@
                 <th scope="col" id="itemPriceID">Item Price</th>
                 <th scope="col" id="countryID">made in</th>
                 <th scope="col">Item Pricture</th>
+                <th scope="col">Status</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -181,6 +203,7 @@
                 <td class="itemPrice">100</td>
                 <td class="country">Turkey</td>
                 <td><img src="./assets/imgs/car spare (1).jpg" alt="" width="100px" height="100px"></td>
+                <td>Pending</td>
                 <td class="actionBtns">
                     <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
                     <button type="button" class="btn btn-warning text-white">Edit <i
@@ -199,6 +222,7 @@
                 <td class="itemPrice">200</td>
                 <td class="country">Chinese</td>
                 <td><img src="./assets/imgs/car spare (2).jpg" alt="" width="100px" height="100px"></td>
+                <td>Pending</td>
                 <td class="actionBtns">
                     <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
                     <button type="button" class="btn btn-warning text-white">Edit <i
@@ -217,6 +241,7 @@
                 <td class="itemPrice">150</td>
                 <td class="country">Japanese</td>
                 <td><img src="./assets/imgs/car spare (3).jpg" alt="" width="100px" height="100px"></td>
+                <td>Pending</td>
                 <td class="actionBtns">
                     <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
                     <button type="button" class="btn btn-warning text-white">Edit <i
