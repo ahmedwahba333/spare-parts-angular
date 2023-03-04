@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row" style="background-color: #f2f2f2;">
+    <div class="col-md-2">
+      <img [src]="maintaceitemdetalis.image" alt="" />
+    </div>
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-7">
+          <h2>{{   maintaceitemdetalis.title }}</h2>
+          <h3><i class="fa fa-location-dot"></i>{{ maintaceitemdetalis.address }}</h3>
+<a  class="btn btn-warning text-light me-2"  >اعرف الطريق</a>
+<a  class="btn btn-warning text-light " >عروض</a>
+        </div>
+        <div class="col-md-5">
+          <div class="bg-warning  mt-3" style="width:30px">
+          <i class="fa-solid fa-heart text-light "style="padding-left:5px;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h2>
+      About us:
+    </h2>
+    <p>{{ maintaceitemdetalis.description}}</p>
+
+  </div>
+  <div>
+<div class="card" style="width:15rem;">
+
+  <div class="card-body">
+
+
+    <h2>لايوجد تعليقات</h2>
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-warning text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  leave acomment
+</button>
+</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add comment to {{ maintaceitemdetalis.title }}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <ngb-rating [(rate)]="currentrate"class="fs-3 text-warning"></ngb-rating>
+       <div>
+       <textarea type="text" cols="50" rows="2">add comment</textarea>
+       </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning text-light" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning text-light">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+
