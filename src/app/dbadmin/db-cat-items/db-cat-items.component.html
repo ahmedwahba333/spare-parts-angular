@@ -181,29 +181,24 @@
                 <th scope="col">#</th>
                 <th scope="col" id="catBrandNameID">Category Brand</th>
                 <th scope="col" id="catModelNameID">Category Model</th>
-                <th scope="col" id="catYearID">Category Year</th>
                 <th scope="col" id="itemNameID">Item Name</th>
                 <th scope="col" id="itemDescID">Item description</th>
                 <th scope="col" id="itemPriceID">Item Price</th>
                 <th scope="col" id="countryID">made in</th>
                 <th scope="col">Item Pricture</th>
-                <th scope="col">Status</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody id="tableBody">
-            <tr class="userOne order-details">
-                <th scope="row">1</th>
-                <td class="catBrandName">mercedes</td>
-                <td class="catModelName">benz</td>
-                <td class="catYear">2011</td>
-                <td class="itemName">After-Market Fuel Pump Motor</td>
-                <td class="itemDesc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum ipsum neque
-                    exercitationem praesentium dolorem molestias obcaecati debitis impedit labore voluptates.</td>
-                <td class="itemPrice">100</td>
-                <td class="country">Turkey</td>
-                <td><img src="./assets/imgs/car spare (1).jpg" alt="" width="100px" height="100px"></td>
-                <td>Pending</td>
+            <tr class="userOne order-details" *ngFor="let item of Product">
+                <th scope="row">{{item.id}}</th>
+                <td class="catBrandName">{{item.category_brand_id}}</td>
+                <td class="catModelName">{{item.category_model_id}}</td>
+                <td class="itemName">{{item.name}}</td>
+                <td class="itemDesc">{{item.desc}}</td>
+                <td class="itemPrice">{{item.price}}</td>
+                <td class="country">{{item.made}}</td>
+                <td><img [src]="item.img" alt="" width="100px" height="100px"></td>
                 <td class="actionBtns">
                     <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
                     <button type="button" class="btn btn-warning text-white">Edit <i
@@ -211,44 +206,7 @@
                     <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
                 </td>
             </tr>
-            <tr class="userTwo order-details">
-                <th scope="row">2</th>
-                <td class="catBrandName">chevrolet</td>
-                <td class="catModelName">aveo</td>
-                <td class="catYear">2006</td>
-                <td class="itemName">Market Horn Kit</td>
-                <td class="itemDesc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum ipsum neque
-                    exercitationem praesentium dolorem molestias obcaecati debitis impedit labore voluptates.</td>
-                <td class="itemPrice">200</td>
-                <td class="country">Chinese</td>
-                <td><img src="./assets/imgs/car spare (2).jpg" alt="" width="100px" height="100px"></td>
-                <td>Pending</td>
-                <td class="actionBtns">
-                    <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
-                    <button type="button" class="btn btn-warning text-white">Edit <i
-                            class="fa fa-exclamation-triangle"></i></button>
-                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
-                </td>
-            </tr>
-            <tr class="userThree order-details">
-                <th scope="row">3</th>
-                <td class="catBrandName">mitsubishi</td>
-                <td class="catModelName">lancer</td>
-                <td class="catYear">2010</td>
-                <td class="itemName">Market Headlight Front Left</td>
-                <td class="itemDesc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum ipsum neque
-                    exercitationem praesentium dolorem molestias obcaecati debitis impedit labore voluptates.</td>
-                <td class="itemPrice">150</td>
-                <td class="country">Japanese</td>
-                <td><img src="./assets/imgs/car spare (3).jpg" alt="" width="100px" height="100px"></td>
-                <td>Pending</td>
-                <td class="actionBtns">
-                    <button type="button" class="btn btn-success">Accept <i class="fa fa-check"></i></button>
-                    <button type="button" class="btn btn-warning text-white">Edit <i
-                            class="fa fa-exclamation-triangle"></i></button>
-                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
-                </td>
-            </tr>
+           
         </tbody>
     </table>
 </div>

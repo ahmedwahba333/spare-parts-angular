@@ -3,16 +3,16 @@
         <h3>Add Category</h3>
         <form [formGroup]="addCat" (ngSubmit)="submitAddCat()" class="mt-4">
             <div>
-                <label for="catName" class="me-4 form-label">Category Name</label>
-                <input type="text" id="catName"
+                <label for="name" class="me-4 form-label">Category Name</label>
+                <input type="text" id="name"
                     [ngClass]="addCat.invalid && addCat.touched?'border-danger':'border-success'"
-                    class="form-control w-100" formControlName="catName">
+                    class="form-control w-100" formControlName="name">
                 <div style="height: 30px;" class="d-flex align-items-start">
-                    <div *ngIf="addCat.controls['catName'].touched && addCat.controls['catName'].invalid">
-                        <div class="text-danger form-text" *ngIf="addCat.controls['catName'].errors?.['required']">
+                    <div *ngIf="addCat.controls['name'].touched && addCat.controls['name'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['name'].errors?.['required']">
                             This Field Is Required
                         </div>
-                        <div class="text-danger form-text" *ngIf="addCat.controls['catName'].errors?.['minlength']">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['name'].errors?.['minlength']">
                             Minimum 3 Characters
                         </div>
                     </div>

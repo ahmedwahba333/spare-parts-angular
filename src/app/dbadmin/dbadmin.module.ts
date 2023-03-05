@@ -21,6 +21,7 @@ import { FaddcatitemsComponent } from './faddcatitems/faddcatitems.component';
 import { FaddmerusrComponent } from './faddmerusr/faddmerusr.component';
 import { FaddmaincenusrComponent } from './faddmaincenusr/faddmaincenusr.component';
 import { FaddcustomerusrComponent } from './faddcustomerusr/faddcustomerusr.component';
+// import { FupdatecatComponent } from './fupdatecat/fupdatecat.component';
 
 
 
@@ -75,6 +76,7 @@ const routes: Routes = [
     FaddmerusrComponent,
     FaddmaincenusrComponent,
     FaddcustomerusrComponent,
+    
   ],
   imports: [
     CommonModule,

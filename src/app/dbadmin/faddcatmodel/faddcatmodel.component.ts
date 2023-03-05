@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-faddcatmodel',
@@ -9,13 +10,17 @@ import { Location } from '@angular/common';
 })
 export class FaddcatmodelComponent {
   addCat: FormGroup;
-  constructor(private location: Location) {
+  constructor(private location: Location , private api: ApiService) {
     this.addCat = new FormGroup({
-      catModel: new FormControl('', [Validators.required, Validators.minLength(3)])
+      model: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      year: new FormControl('', [Validators.required])
     });
   }
   submitAddCat() {
-    console.log(this.addCat);
+    console.log(this.addCat.value);
+    this.api.storeModel(this.addCat.value).subscribe(res=>{
+      console.log(res)
+    })
 
   }
   goBAck() {

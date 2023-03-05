@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
+import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-faddcatbrand',
   templateUrl: './faddcatbrand.component.html',
@@ -8,13 +9,16 @@ import { Location } from '@angular/common';
 })
 export class FaddcatbrandComponent {
   addCat: FormGroup;
-  constructor(private location: Location) {
+  constructor(private location: Location , private api: ApiService) {
     this.addCat = new FormGroup({
-      catBrand: new FormControl('', [Validators.required, Validators.minLength(3)])
+      brand: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
   }
   submitAddCat() {
-    console.log(this.addCat);
+    console.log(this.addCat.value);
+    this.api.storeBrands(this.addCat.value).subscribe(res=>{
+      console.log(res)
+    })
 
   }
   goBAck() {

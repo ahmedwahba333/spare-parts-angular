@@ -10,6 +10,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./dbvendor/dbvendor.module').then(m => m.DbvendorModule)
   },
+  
 ];
 
 @NgModule({

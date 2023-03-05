@@ -5,7 +5,7 @@
         <div class="text-center d-flex align-items-center justify-content-center total total-orders">
             <div>
                 <p class="m-3">Total Category Brands</p>
-                <span class="m-3"><i class="fa fa-tags m-3"></i>4</span>
+                <span class="m-3"><i class="fa fa-tags m-3"></i>{{Brands.length}}</span>
             </div>
         </div>
     </div>
@@ -98,33 +98,16 @@
             </tr>
         </thead>
         <tbody id="tableBody">
-            <tr class="userOne order-details">
-                <th scope="row">1</th>
-                <td class="catBrandName">Tires</td>
+            <tr class="userOne order-details" *ngFor="let brand of Brands">
+                <th scope="row">{{brand.id}}</th>
+                <td class="catBrandName">{{brand.brand}}</td>
                 <td class="actionBtns">
                     <button type="button" class="btn btn-warning text-white">Edit <i
                             class="fa fa-exclamation-triangle"></i></button>
-                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
+                    <button type="button" class="btn btn-danger" (click)="DeleteBrand(brand.id)">Reject <i class="fa fa-xing"></i></button>
                 </td>
             </tr>
-            <tr class="userTwo order-details">
-                <th scope="row">2</th>
-                <td class="catBrandName">Oil</td>
-                <td class="actionBtns">
-                    <button type="button" class="btn btn-warning text-white">Edit <i
-                            class="fa fa-exclamation-triangle"></i></button>
-                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
-                </td>
-            </tr>
-            <tr class="userThree order-details">
-                <th scope="row">3</th>
-                <td class="catBrandName">motor</td>
-                <td class="actionBtns">
-                    <button type="button" class="btn btn-warning text-white">Edit <i
-                            class="fa fa-exclamation-triangle"></i></button>
-                    <button type="button" class="btn btn-danger">Reject <i class="fa fa-xing"></i></button>
-                </td>
-            </tr>
+            
         </tbody>
     </table>
 </div>

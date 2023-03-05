@@ -3,20 +3,23 @@
         <h3>Add Category Model</h3>
         <form [formGroup]="addCat" (ngSubmit)="submitAddCat()" class="mt-4">
             <div>
-                <label for="catModel" class="me-4 form-label">Category Model</label>
-                <input type="text" id="catModel"
+                <label for="model" class="me-4 form-label">Category Model</label>
+                <input type="text" id="model"
                     [ngClass]="addCat.invalid && addCat.touched?'border-danger':'border-success'"
-                    class="form-control w-100" formControlName="catModel">
+                    class="form-control w-100" formControlName="model">
                 <div style="height: 30px;" class="d-flex align-items-start">
-                    <div *ngIf="addCat.controls['catModel'].touched && addCat.controls['catModel'].invalid">
-                        <div class="text-danger form-text" *ngIf="addCat.controls['catModel'].errors?.['required']">
+                    <div *ngIf="addCat.controls['model'].touched && addCat.controls['model'].invalid">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['model'].errors?.['required']">
                             This Field Is Required
                         </div>
-                        <div class="text-danger form-text" *ngIf="addCat.controls['catModel'].errors?.['minlength']">
+                        <div class="text-danger form-text" *ngIf="addCat.controls['model'].errors?.['minlength']">
                             Minimum 3 Characters
                         </div>
                     </div>
                 </div>
+                <label for="year" class="me-4 form-label"> Model Year</label>
+
+                <input type="text"  class="form-control w-100 mb-5" formControlName="year">
             </div>
 
             <button class="btn btn-primary" [disabled]="addCat.invalid">Submit</button>
